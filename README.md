@@ -4,7 +4,6 @@ A straightforward extension that allows users to establish a budget limit and re
 
 Tools:
 
-- Node.js
 - Javascript
 - Html
 - CSS
