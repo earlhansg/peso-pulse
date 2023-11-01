@@ -22,7 +22,7 @@ body {
   color: #b332b3;
 }
 
-.limit-header>span {
+.limit-header > span {
   font-size: 17px;
 }
 
@@ -38,7 +38,7 @@ body {
   gap: 10px;
 }
 
-.form>input {
+.form > input {
   margin-top: 1rem;
   width: 50%;
   background-color: whitesmoke;
@@ -60,7 +60,7 @@ body {
   background-color: #fff;
   position: absolute;
   width: 30%;
-  top: 10%;
+  top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 20px;
@@ -76,4 +76,21 @@ body {
   right: 0;
   padding: 10px;
   cursor: pointer;
+}
+
+.modal-content-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modal-content-form > input {
+  margin-top: 1rem;
+  background-color: whitesmoke;
+  padding: 20px;
+}
+
+.btn-add {
+  background-color: #b332b3;
+  color: white;
 }
