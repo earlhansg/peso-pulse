@@ -1,5 +1,6 @@
 body {
   background-color: whitesmoke;
+  min-width: 500px;
 }
 
 .budget,
@@ -40,4 +41,6 @@ body {
 .form > input {
   margin-top: 1rem;
   width: 50%;
+  background-color: whitesmoke;
+  padding: 20px;
 }
