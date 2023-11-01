@@ -1,0 +1,43 @@
+body {
+  background-color: whitesmoke;
+}
+
+.budget,
+.spend,
+.limit {
+  background-color: white;
+  margin: 2rem;
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+}
+
+.budget-header {
+  color: #1e83ad;
+}
+
+.spend-header {
+  color: #b332b3;
+}
+
+.limit-header > span {
+  font-size: 17px;
+}
+
+#funds,
+#spend {
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form > input {
+  margin-top: 1rem;
+  width: 50%;
+}

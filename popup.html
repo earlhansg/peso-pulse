@@ -1,20 +1,47 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>Peso Pulse</title>
+    <link rel="stylesheet" href="./css/popup.css" />
     <script src="jquery-3.7.1.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="popup.js"></script>
-</head>
+    <script src="popup.js"></script>
+  </head>
 
-<body>
-
-    <h1>This is a Heading</h1>
-    <p>This is a paragraph.</p>
-    <p>If you click on me, I will disappear.</p>
-    <p>Click me away!</p>
-    <p>Click me too!</p>
-
-</body>
-
+  <body style="background-color: whitesmoke">
+    <div class="budget">
+      <span class="budget-header">
+        <span class="glyphicon glyphicon-briefcase"></span>
+        <span>Remaining Funds</span>
+      </span>
+      <span id="funds">₱0</span>
+    </div>
+    <div class="spend">
+      <span class="spend-header pt-2">
+        <span class="glyphicon glyphicon-list-alt"></span>
+        <span>Expense Record</span>
+      </span>
+      <span id="spend">₱0</span>
+    </div>
+    <div class="limit">
+      <span class="limit-header pt-2">
+        <span>My Budget</span>
+      </span>
+      <span class="d-flex form">
+        <input
+          class="form-control"
+          id="budget-input"
+          placeholder="Update your budget limit"
+        />
+        <span>
+          <button class="btn btn-success">Save</button>
+        </span>
+      </span>
+    </div>
+  </body>
 </html>
