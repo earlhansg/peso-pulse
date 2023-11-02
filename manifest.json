@@ -16,7 +16,7 @@
     "24": "images/icon24.png",
     "32": "images/icon32.png"
   },
-  "permissions": ["activeTab", "scripting", "contextMenus"],
+  "permissions": ["activeTab", "scripting", "contextMenus", "storage"],
   "background": {
     "service_worker": "background.js"
   },
