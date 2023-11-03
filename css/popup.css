@@ -20,6 +20,23 @@ body {
 
 .spend-header {
   color: #b332b3;
+  display: flex;
+}
+
+.spend-header > span:first-child {
+  margin-right: auto;
+}
+
+.spend-content {
+  margin: 10px 0;
+}
+
+.item-list {
+  display: flex;
+}
+
+.item-list > span:first-child {
+  margin-right: auto;
 }
 
 .limit-header > span {

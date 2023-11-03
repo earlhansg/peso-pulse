@@ -47,12 +47,14 @@
 
     $("#add").click(function () {
       let expenseName = $("#content-form").val();
+      let id = currentExpenseList.length;
       let newExpenseList = [
         ...currentExpenseList,
-        { price: selectedPrice, expenseName },
+        { price: selectedPrice, name: expenseName },
       ];
       console.log("newExpenseList", newExpenseList);
       chrome.storage.sync.set({
+        id,
         expensesList: newExpenseList,
         tabSelectionId: null,
       });

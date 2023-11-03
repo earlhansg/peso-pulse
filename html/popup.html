@@ -3,7 +3,7 @@
   <head>
     <title>Peso Pulse</title>
     <link rel="stylesheet" href="../css/popup.css" />
-    <script src="jquery-3.7.1.min.js"></script>
+    <script src="../js/jquery-3.7.1.min.js"></script>
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -20,11 +20,22 @@
       <span id="funds">0</span>
     </div>
     <div class="spend">
-      <span class="spend-header pt-2">
-        <span class="glyphicon glyphicon-list-alt"></span>
-        <span>Expense Record</span>
-      </span>
-      <span id="spend">0</span>
+      <div class="spend-header pt-2">
+        <span>
+          <span class="glyphicon glyphicon-list-alt"></span>
+          <span>Expense Record</span>
+        </span>
+        <span>
+          <span class="glyphicon glyphicon-chevron-down"></span>
+        </span>
+      </div>
+      <div>
+        <span style="font-size: 23px">&#8369;</span>
+        <span id="spend"></span>
+      </div>
+      <div class="spend-content">
+        <ul id="spendList" class="list-group"></ul>
+      </div>
     </div>
     <div class="limit">
       <span class="limit-header pt-2">
