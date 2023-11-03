@@ -50,11 +50,10 @@
       let id = currentExpenseList.length;
       let newExpenseList = [
         ...currentExpenseList,
-        { price: selectedPrice, name: expenseName },
+        { id, price: selectedPrice, name: expenseName },
       ];
       console.log("newExpenseList", newExpenseList);
       chrome.storage.sync.set({
-        id,
         expensesList: newExpenseList,
         tabSelectionId: null,
       });

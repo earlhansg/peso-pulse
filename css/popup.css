@@ -29,6 +29,11 @@ body {
 
 .spend-content {
   margin: 10px 0;
+  display: none;
+}
+
+#down-icon {
+  display: none;
 }
 
 .item-list {

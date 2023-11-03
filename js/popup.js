@@ -3,20 +3,12 @@
   $(document).ready(function () {
     // write code here
 
-    chrome.storage.sync.set(
-      {
-        expensesList: [
-          { id: 1, price: "200", name: "Testing Name" },
-          { id: 1, price: "300", name: "Testing Name 2" },
-        ],
-      },
-      function () {}
-    );
-
     chrome.storage.sync.get(["expensesList"], function (data) {
       console.log("popup data", data);
       if (data.expensesList.length > 0) {
         console.log("approved");
+        $("#down-icon").fadeIn();
+        $(".spend-content").fadeIn();
         data.expensesList.map((expense) => {
           $("#spendList").append(`<li class="list-group-item">
             <span class="item-list">
@@ -28,10 +20,18 @@
           $("#spend").text(`${total}`);
         });
       }
+      else { 
+        console.log("no data as of this moment")
+      }
+      $("#spend").text(`${total}`);
     });
 
     chrome.storage.sync.set({
       totalExpenses: total,
+    });
+
+    $("#down-icon").click(function(){
+      $(".spend-content").fadeToggle();
     });
   });
 })();
