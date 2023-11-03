@@ -59,7 +59,7 @@ body {
 .modal-content {
   background-color: #fff;
   position: absolute;
-  width: 30%;
+  width: 20%;
   top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
