@@ -30,5 +30,5 @@ What if you had only "213 Remaining Funds"?
 <img src="https://github.com/earlhansg/peso-pulse/blob/main/images/screenshots/screenshots-6.png" style=" width:700px ; height:500px ">
 <img src="https://github.com/earlhansg/peso-pulse/blob/main/images/screenshots/screenshots-7.png" style=" width:700px ; height:500px ">
 
-Attempting to add an expense of "859" will result in a notification informing you that you do not have enough funds.
+Attempting to add an expense of "859" will result in a notification informing you that you do not have enough funds. (check the notification in the bottom right of the image)
 <img src="https://github.com/earlhansg/peso-pulse/blob/main/images/screenshots/screenshots-8.png" style=" width:700px ; height:500px ">
