@@ -9,3 +9,6 @@ Tools:
 - CSS
 - Manifest
 
+## Screenhots
+
+<img src="https://github.com/earlhansg/peso-pulse/blob/main/images/screenshots/screenshots-1.png" style=" width:700px ; height:300px ">
