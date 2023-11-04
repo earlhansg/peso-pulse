@@ -57,6 +57,8 @@
         expensesList: newExpenseList,
         tabSelectionId: null,
       });
+      chrome.storage.sync.set({ totalExpenses: selectedPrice });
+      chrome.runtime.sendMessage({command: 'UpdatedFunds', value: null});
       $("#myModal").fadeOut(function () {
         setTimeout(function () {
           close();

@@ -6,18 +6,22 @@ chrome.contextMenus.create({
   contexts: ["selection"],
 });
 
+console.log("checking");
+
 chrome.storage.sync.set({ expensesList: [] });
-chrome.storage.sync.set({ remainingFunds: 0 });
+// chrome.storage.sync.set({ remainingFunds: 0 });
+// chrome.storage.sync.remove('remainingFunds');
+// chrome.storage.sync.set({totalExpenses: 0});
 
 let funds = 0;
 async function fetchFunds() {
   try {
     const response = await chrome.storage.sync.get("remainingFunds");
     if (response && response.remainingFunds !== undefined) {
-      console.log(response);
       funds = response.remainingFunds;
+      console.log("if", funds);
     } else {
-      throw new Error("Failed to fetch data");
+      chrome.storage.sync.set({ remainingFunds: 0 });
     }
   } catch (error) {
     console.error(error);
@@ -27,17 +31,30 @@ async function fetchFunds() {
 
 fetchFunds();
 
+chrome.runtime.onMessage.addListener((msg) => {
+  if (msg.command === "AddFunds") {
+    funds += parseInt(msg.value, 10);
+    chrome.storage.sync.set({ remainingFunds: funds });
+  }
+  if (msg.command === "UpdatedFunds") {
+    console.log("Add listen to this UpdatedFunds");
+    chrome.storage.sync.get("totalExpenses", function (data) {
+      funds -= parseInt(data.totalExpenses, 10);
+      chrome.storage.sync.set({ remainingFunds: funds });
+    });
+  }
+  console.log('remaining funds', funds)
+});
+
+
 let removeCharacter = (selectedString) => {
   return selectedString.replace(/[^0-9]/g, "");
 };
 
-chrome.contextMenus.onClicked.addListener((clickData, tab) => {
-  console.log("clickData", clickData, tab, funds);
+chrome.contextMenus.onClicked.addListener(async function (clickData, tab) {
+  console.log("remaining funds", funds);
   if (clickData.menuItemId === "PesoPulse" && clickData.selectionText) {
-    if (
-      removeCharacter(clickData.selectionText) &&
-      funds > removeCharacter(clickData.selectionText)
-    ) {
+    if (funds > removeCharacter(clickData.selectionText)) {
       chrome.storage.sync.set({
         newSelectionPrice: removeCharacter(clickData.selectionText),
       });
